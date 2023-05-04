@@ -1,1 +1,1 @@
-# Furniture palace e-commerce
+# furniture-starter
