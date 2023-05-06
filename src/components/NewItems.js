@@ -17,11 +17,17 @@ const NewItems = () => {
             <h2 className='title max-w-[245px] lg:mt-[30px] lg:mb-[90px]'>{title}</h2>
             <p className='max-w-[245] lg:mb-12'>{subtitle}</p>
             <div className='hidden lg:flex items-center'>
-              <a className='hover:border-b border-primary lg:items-center' href='#'>{link}</a>
+              <a className='hover:border-b border-primary lg:items-center font-medium transition-all' href='#'>
+                {link}
+              </a>
+              <div className='text-3xl'>{icon}</div>
             </div>
           </div>
           {/* slider */}
-          <NewItemsSlider />
+          <div className='lg:max-w-[800px] xl:max-w-[900px] lg:absolute lg:-right-2/4'>
+            <NewItemsSlider />
+          </div>
+          
         </div>
       </div>
     </section>
