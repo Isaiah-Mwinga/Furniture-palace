@@ -11,13 +11,13 @@ const NewItems = () => {
   return (
     <section className='section'>
       <div className='container mx-auto'>
-        <div>
+        <div className='flex flex-col lg:flex-row'>
           {/* text */}
-          <div>
-            <h2 className='title'>{title}</h2>
-            <p className='subtitle'>{subtitle}</p>
-            <div>
-              <a href='#'>{link}</a>
+          <div className=' flex md:flex-col items-baseline gap-x-6 mb-6 lg:mb-0'>
+            <h2 className='title max-w-[245px] lg:mt-[30px] lg:mb-[90px]'>{title}</h2>
+            <p className='max-w-[245] lg:mb-12'>{subtitle}</p>
+            <div className='hidden lg:flex items-center'>
+              <a className='hover:border-b border-primary lg:items-center' href='#'>{link}</a>
             </div>
           </div>
           {/* slider */}
