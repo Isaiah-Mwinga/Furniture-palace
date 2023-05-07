@@ -11,7 +11,15 @@ import 'swiper/css/navigation';
 import { newInStore } from '../data';
 
 const NewItemsSlider = () => {
-  return <div>NewItemsSlider</div>;
+  return (
+    <Swiper>
+      {newInStore.products.map((product, index) => {
+        return (
+          <SwiperSlide key={index}>slide</SwiperSlide>
+        )
+      })}
+    </Swiper>
+  );
 };
 
 export default NewItemsSlider;
