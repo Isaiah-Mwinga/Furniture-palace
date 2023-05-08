@@ -22,11 +22,15 @@ const ProductSlider = () => {
   // destructure products
   const { pages } = products;
   return (
-    <Swiper>
+    <Swiper 
+      modules={[Pagination, Navigation]}
+      pagination={{ clickable: true}} 
+      navigation={true}
+      className='productSlider min-h-[1300px]'>
       {pages.map((page, idex) => {
         return (
           <SwiperSlide key={idex}>
-            <div>
+            <div className='grid grid-cols-2 gap-x-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-[30px]'>
               {page.productList.map((product,  index) => {
                 //destructuring product
                 const { image, name, price, oldPrice, } = product;
@@ -41,6 +45,7 @@ const ProductSlider = () => {
                     <div>{name}</div>
                     <div>
                       <div> Ksh {price}</div>
+                      <div> Ksh {oldPrice}</div>
                     </div>
                   </div>
                 )})}
