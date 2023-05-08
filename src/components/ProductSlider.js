@@ -39,6 +39,9 @@ const ProductSlider = () => {
                       </div>
                     </div>
                     <div>{name}</div>
+                    <div>
+                      <div> Ksh {price}</div>
+                    </div>
                   </div>
                 )})}
             </div>
