@@ -19,7 +19,34 @@ import { products } from '../data';
 import {HiPlus} from 'react-icons/hi';
 
 const ProductSlider = () => {
-  return <div>ProductSlider</div>;
+  // destructure products
+  const { pages } = products;
+  return (
+    <Swiper>
+      {pages.map((page, idex) => {
+        return (
+          <SwiperSlide key={idex}>
+            <div>
+              {page.productList.map((product,  index) => {
+                //destructuring product
+                const { image, name, price, oldPrice, } = product;
+                return (
+                  <div>
+                    <div>
+                      <img src={image.type} alt='' />
+                      <div>
+                        <HiPlus className='text-xl text-primary' />
+                      </div>
+                    </div>
+                    <div>{name}</div>
+                  </div>
+                )})}
+            </div>
+          </SwiperSlide>
+        )
+      })}
+    </Swiper>
+  );
 };
 
 export default ProductSlider;
