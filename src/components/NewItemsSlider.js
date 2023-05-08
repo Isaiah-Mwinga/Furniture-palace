@@ -12,10 +12,15 @@ import { newInStore } from '../data';
 
 const NewItemsSlider = () => {
   return (
-    <Swiper>
+    <Swiper grabCursor={true}>
       {newInStore.products.map((product, index) => {
         return (
-          <SwiperSlide key={index}>slide</SwiperSlide>
+          <SwiperSlide className='max-w-[265px]' key={index}>
+            <div>
+              <img src={product.image.type} alt='' />
+              <div>{product.name}</div>
+            </div>
+          </SwiperSlide>
         )
       })}
     </Swiper>
