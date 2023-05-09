@@ -15,13 +15,16 @@ import {testimonial} from '../data';
 
 const TestimonialSlider = () => {
   return (
-    <Swiper>
+    <Swiper className='testimonialSlider'
+      modules={[Navigation, Autoplay]} 
+      navigation={true} 
+      autoplay={true}>
       {testimonial.persons.map((person, index) => {
         //destructure person
         const {avatar, name, occupation, message} = person;
         return (
           <SwiperSlide key={index}>
-            <div>
+            <div className='flex flex-col min-h-[250px]'>
               <div>
                 {/* avatar */}
                 <img src={avatar.type} alt='' />
@@ -29,6 +32,8 @@ const TestimonialSlider = () => {
                   <div>{name}</div>
                   <div>{occupation}</div>
                 </div>
+                {/* message */}
+                <div>{message}</div>
               </div>
             </div>
           </SwiperSlide>
