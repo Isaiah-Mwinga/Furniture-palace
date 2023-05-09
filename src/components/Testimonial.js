@@ -9,14 +9,14 @@ import {testimonial} from '../data';
 
 const Testimonial = () => {
   //destructure testmonial
-  const {title, image} = testimonial;
+  const {image, title} = testimonial;
   return (
-    <section>
+    <section className='section'>
       <div className='container max-auto'>
         <div className='flex flex-col lg:flex-row lg:gap-x-10 gap-y-2'>
-          <div>
+          <div className='lg:max-w-[50%]'>
             {/* title */}
-            <h2 className='title'>{title}</h2>
+            <h2 className='title mb-9'>{title}</h2>
             {/* slider */}
             <TestimonialSlider />
           </div>
