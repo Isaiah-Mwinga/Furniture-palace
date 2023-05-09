@@ -25,6 +25,10 @@ const TestimonialSlider = () => {
               <div>
                 {/* avatar */}
                 <img src={avatar.type} alt='' />
+                <div>
+                  <div>{name}</div>
+                  <div>{occupation}</div>
+                </div>
               </div>
             </div>
           </SwiperSlide>
