@@ -1,15 +1,15 @@
 import React from 'react';
 
 // import components
-import TestmonialSlider from './TestmonialSlider';
+import TestimonialSlider from './TestimonialSlider';
 
 //import data
-import {testmonial} from '../data';
+import {testimonial} from '../data';
 
 
 const Testimonial = () => {
   //destructure testmonial
-  const {title, image} = testmonial;
+  const {title, image} = testimonial;
   return (
     <section>
       <div className='container max-auto'>
@@ -18,7 +18,7 @@ const Testimonial = () => {
             {/* title */}
             <h2 className='title'>{title}</h2>
             {/* slider */}
-            <TestmonialSlider />
+            <TestimonialSlider />
           </div>
             {/* image */}
             <div className='order-1'>
