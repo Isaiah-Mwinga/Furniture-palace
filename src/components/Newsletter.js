@@ -7,9 +7,9 @@ const Newsletter = () => {
   //destructure newsletter
   const { title, subtitle, placeholder, buttonText } = newsletter;
   return (
-    <section className='section bg-newsletter'>
-      <div className='container max-auto'>
-        <div>
+    <section className='section bg-newsletter min-h-[490px]'>
+      <div className='container max-auto flex justify-center lg:justify-end'>
+        <div className='w-full max-w-[558px] text-center text-white lg:text-left'>
           <h2>{title}</h2>
           <p>{subtitle}</p>
           <div>
