@@ -16,10 +16,31 @@ const Header = () => {
   const [bg, setBg] = useState(false);
   const [mobileNav, setMobileNave] = useState(false);
   return (
-    <header className={`${ bg ? 'bg-primary py-4 lg:py-6' : bg-none} fixed left-0 w-full py-8 z-10 transition-all duration-200`}>
+    <header className={`${ bg ? 'bg-primary py-4 lg:py-6' : 'bg-none'} fixed left-0 w-full py-8 z-10 transition-all duration-200`}>
       <div className='container mx-auto'>
-        <div>
+        <div className='flex justify-between items-center'>
           {/*logo*/}
+          <a href='#'>
+            <img className='h-6 lg:h-8' src={Logo} alt='' />
+          </a>
+          {/*menu icon*/}
+          <div className='text-2xl text-white md:hidden lg:text-3xl cursor-pointer'>
+            {mobileNav ? <CgClose /> : <CgMenuRight />}
+          </div>
+          {/*nav*/}
+          <nav className='hidden md:flex'>
+            <ul className='md:flex md:gap-x-12'>
+              {navigation.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <a className='capitalize text-white hover:border-b transition-all' href='#'>
+                      {item.name}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
