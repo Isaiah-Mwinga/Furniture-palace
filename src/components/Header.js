@@ -15,6 +15,12 @@ import NavMobile from './NavMobile';
 const Header = () => {
   const [bg, setBg] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      return window.scrollY > 50 ? setBg(true) : setBg(false);
+    });
+  });
   return (
     <header className={`${ bg ? 'bg-primary py-4 lg:py-6' : 'bg-none'} fixed left-0 w-full py-8 z-10 transition-all duration-200`}>
       <div className='container mx-auto'>

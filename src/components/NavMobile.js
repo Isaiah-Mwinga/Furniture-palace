@@ -6,7 +6,7 @@ import { navigation } from '../data';
 const NavMobile = () => {
   return (
     <div className='bg-white w-full h-full shadow-2xl'>
-      <ul className='text-center h-full flex flex-col items-center justify-center gap-y-4'>
+      <ul className='text-center h-full flex flex-col items-center justify-center gap-y-6'>
         {navigation.map((item, index) => {
           return (
             <li key={index}>
