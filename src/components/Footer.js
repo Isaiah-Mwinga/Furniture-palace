@@ -16,6 +16,16 @@ const Footer = () => {
           <a href='#'>
             <img src={Logo} alt='' />
           </a>
+          {/*social icons*/}
+          <div>
+            {footer.social.map((item, index) => {
+              return (
+                <div key={index}>
+                  <a href='#'>{item.icon}</a>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
     </footer>
