@@ -20,7 +20,7 @@ const Footer = () => {
           <div className='flex gap-x-4'>
             {footer.social.map((item, index) => {
               return (
-                <div className='w-12 h-12 text-2xl bg-gray-700 hover:bg-accent rounded-full flex justify-center items-center' key={index}>
+                <div className='w-12 h-12 text-2xl bg-gray-700 hover:bg-accent rounded-full flex justify-center items-center transition' key={index}>
                   <a href='#'>{item.icon}</a>
                 </div>
               );
