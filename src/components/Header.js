@@ -13,7 +13,17 @@ import { navigation } from '../data';
 import NavMobile from './NavMobile';
 
 const Header = () => {
-  return <div>Header</div>;
+  const [bg, setBg] = useState(false);
+  const [mobileNav, setMobileNave] = useState(false);
+  return (
+    <header className={`${ bg ? 'bg-primary py-4 lg:py-6' : bg-none} fixed left-0 w-full py-8 z-10 transition-all duration-200`}>
+      <div className='container mx-auto'>
+        <div>
+          {/*logo*/}
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;
