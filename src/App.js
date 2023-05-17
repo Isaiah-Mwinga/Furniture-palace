@@ -10,11 +10,14 @@ import Testimonial from './components/Testimonial';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Login from './components/Login';
+
 
 
 const App = () => {
   return (
     <div className='w-full max-w-[1440px] mx-auto bg-white'>
+      <Login />
       <Header />
       <Hero />
       <Features />
