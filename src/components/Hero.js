@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //import data
 import { hero } from '../data';
@@ -20,9 +21,11 @@ const Hero = () => {
           {subtitle}
         </h2>
         {/* button*/}
+        <Link to='/login'>
         <button className='bg-[rgba(255,255,255,0.4)] hover:bg-[rgba(102,95,95,0.5)] px-[35px] py-[9px] mb-[160px] text-xl rounded-md backdrop-blur-md transition lg:px-[10px] lg:py-[10px] lg:mb-[194px]'>
           {buttonText}
         </button>
+        </Link>
         {/* stats*/}
         <div className='-top-[70px] relative'>
           <Stats />
