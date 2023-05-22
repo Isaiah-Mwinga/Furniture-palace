@@ -16,6 +16,17 @@ export default function Home() {
         <div>
             <Header />
             <Hero />
+            <Features />
+            <FeaturesSecond />
+            <Products />
+            <ProductSlider />
+            <NewItems />
+            <NewItemsSlider />
+            <Testimonial />
+            <TestimonialSlider />
+            <Newsletter />
+            <Footer />
+
 
         </div>
     )
