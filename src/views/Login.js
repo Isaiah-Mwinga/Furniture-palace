@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSignup, setIsSignup] = useState(true);
   const [user, setUser] = useState(null);
 
   const handleChange = (e) => {
@@ -17,7 +18,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch(`/api/${isSignup ? 'signup' : 'login'}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,14 +30,16 @@ function Login() {
       setEmail('');
       setPassword('');
     } catch (error) {
-      console.log('Login failed:', error);
+      console.log('Authentication failed:', error);
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-md w-full mx-auto p-6 bg-white rounded shadow-md">
-        <h1 className="text-2xl font-bold mb-6">Login</h1>
+        <h1 className="text-2xl font-bold mb-6">
+          {isSignup ? 'Signup' : 'Login'}
+        </h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block mb-2">Email:</label>
@@ -62,14 +65,27 @@ function Login() {
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
             type="submit"
           >
-            Login
+            {isSignup ? 'Signup' : 'Login'}
           </button>
         </form>
         {user && (
           <div className="mt-4">
-            <h2 className="text-lg">Welcome, {user.name}!</h2>
+            <h2 className="text-lg">
+              Welcome, {user.name}! You are now logged in.
+            </h2>
           </div>
         )}
+        <div className="mt-4">
+          <p>
+            {isSignup ? 'Already have an account?' : 'Need an account?'}
+            <button
+              className="text-blue-500 ml-1"
+              onClick={() => setIsSignup(!isSignup)}
+            >
+              {isSignup ? 'Login' : 'Signup'}
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );
