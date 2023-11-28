@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         {/*copyright*/}
-        <p className='text-center'>& FurniturePalace 2023 - All rights reserved yes.</p>
+        <p className='text-center'>& FurniturePalace 2023 - All rights reserved.</p>
       </div>
     </footer>
   );
